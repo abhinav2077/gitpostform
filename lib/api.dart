@@ -2,7 +2,7 @@ import 'dart:typed_data';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = "http://localhost:3000";
+  static const String baseUrl = "https://localhost:3000/";
 
   static Future<bool> uploadFile({
     required Uint8List fileBytes,
@@ -27,6 +27,7 @@ class ApiService {
       var response = await request.send();
 
       if (response.statusCode == 200) {
+      
         return true;
       } else {
         print("Upload failed: ${response.statusCode}");
